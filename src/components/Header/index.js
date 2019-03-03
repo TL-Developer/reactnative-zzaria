@@ -3,7 +3,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 
 const Header = () => (
   <View style={styles.container}>
-    <Text style={styles.title}>Napoles Pizzaria</Text>
+    <Text>Napoles Pizzaria</Text>
   </View>
 );
 
@@ -11,13 +11,9 @@ const Header = () => (
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    height: 80,
+    height: '10%',
     padding: 20,
     backgroundColor: '#ff3300',
-  },
-  title: {
-    color: '#fff',
-    fontSize: '30px',
   }
 });
 

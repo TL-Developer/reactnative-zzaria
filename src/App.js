@@ -12,6 +12,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 
 import Header from './components/Header';
 import Content from './components/Content';
+import Footer from './components/Footer';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -20,6 +21,7 @@ export default class App extends Component<Props> {
       <View style={styles.container}>
         <Header />
         <Content />
+        <Footer />
       </View>
     );
   }
@@ -27,7 +29,7 @@ export default class App extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    display: flex,
-    backgroundColor: '#fafafa',
+    display: 'flex',
+    backgroundColor: '#fafafa'
   },
 });
