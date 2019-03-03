@@ -9,20 +9,22 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import { ThemeProvider } from 'react-native-elements';
 
 import Header from './components/Header';
-import Content from './components/Content';
+import Home from './pages/Home';
 import Footer from './components/Footer';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <Header />
-        <Content />
-        <Footer />
-      </View>
+      <ThemeProvider>
+        <View style={styles.container}>
+          <Header />
+          <Home />
+        </View>
+      </ThemeProvider>
     );
   }
 }

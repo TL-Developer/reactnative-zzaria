@@ -21,7 +21,7 @@ const list = [
   },
 ]
 
-const Content = () => (
+const Home = () => (
   <ScrollView style={styles.container}>
     <Text style={styles.title}>Pizzas Salgadas</Text>
     <Divider style={{ backgroundColor: 'blue' }} />
@@ -51,9 +51,8 @@ const Content = () => (
 
 const styles = StyleSheet.create({
   container: {
-    height: '80%',
+    height: '90%',
     padding: 10,
-    paddingBottom: '20%',
   },
   title: {
     fontSize: 22,
@@ -62,4 +61,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Content;
+export default Home;
