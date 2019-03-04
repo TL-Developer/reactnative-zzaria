@@ -1,6 +1,5 @@
 import React from 'react';
-import {Platform, StyleSheet, ScrollView, Text} from 'react-native';
-import { ListItem, Divider } from 'react-native-elements';
+import { Platform, StyleSheet, ScrollView } from 'react-native';
 
 import PizzasSalgadas from '../../components/Home/PizzasSalgadas';
 import PizzasDoces from '../../components/Home/PizzasDoces';
