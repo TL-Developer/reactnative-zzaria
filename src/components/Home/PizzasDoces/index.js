@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform, StyleSheet, ScrollView, Text} from 'react-native';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 import { ListItem, Divider } from 'react-native-elements';
 
 const list = [
@@ -21,19 +21,8 @@ const list = [
   },
 ]
 
-const Content = () => (
-  <ScrollView style={styles.container}>
-    <Text style={styles.title}>Pizzas Salgadas</Text>
-    <Divider style={{ backgroundColor: 'blue' }} />
-    {
-      list.map((l, i) => (
-        <ListItem
-          key={i}
-          title={l.name}
-          subtitle={l.subtitle}
-        />
-      ))
-    }
+const PizzasSalgadas = () => (
+  <View>
     <Text style={styles.title}>Pizzas Doces</Text>
     <Divider style={{ backgroundColor: 'blue' }} />
     {
@@ -45,16 +34,10 @@ const Content = () => (
         />
       ))
     }
-  </ScrollView>
+  </View>
 );
 
-
 const styles = StyleSheet.create({
-  container: {
-    height: '80%',
-    padding: 10,
-    paddingBottom: '20%',
-  },
   title: {
     fontSize: 22,
     marginTop: 10,
@@ -62,4 +45,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Content;
+export default PizzasSalgadas;
