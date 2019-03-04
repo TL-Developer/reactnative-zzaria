@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from 'redux';
 
-import pizzasSalgadas from './reducers/pizzasSalgadas';
+import pizzas from './reducers/pizzas';
 
 const reducers = combineReducers({
-  pizzasSalgadas,
+  pizzas,
 });
 
 const store = () => {

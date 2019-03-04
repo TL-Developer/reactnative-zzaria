@@ -3,10 +3,27 @@ import {
 } from '../constants';
 
 const initialState = {
-  pizzasSalgadas: {
+  salgadas: {
     loading: false,
-    list: [],
-  }
+    list: [
+      {
+        name: 'Grande 2 sabores',
+        subtitle: 'Escolha dois sabores'
+      },
+      {
+        name: 'Grande',
+        subtitle: 'Escolha um sabor'
+      },
+      {
+        name: 'Broto 2 sabores',
+        subtitle: 'Escolha dois sabores'
+      },
+      {
+        name: 'Broto',
+        subtitle: 'Escolha um sabor'
+      },
+    ],
+  },
 };
 
 const reducer = (state = initialState, action) => {

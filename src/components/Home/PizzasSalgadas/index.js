@@ -1,32 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { ListItem, Divider } from 'react-native-elements';
 
-const list = [
-  {
-    name: 'Grande 2 sabores',
-    subtitle: 'Escolha dois sabores'
-  },
-  {
-    name: 'Grande',
-    subtitle: 'Escolha um sabor'
-  },
-  {
-    name: 'Broto 2 sabores',
-    subtitle: 'Escolha dois sabores'
-  },
-  {
-    name: 'Broto',
-    subtitle: 'Escolha um sabor'
-  },
-]
-
-const PizzasSalgadas = () => (
+const PizzasSalgadas = ({
+  pizzas,
+}) => (
   <View>
     <Text style={styles.title}>Pizzas Salgadas</Text>
     <Divider style={{ backgroundColor: 'blue' }} />
     {
-      list.map((l, i) => (
+      pizzas.map((l, i) => (
         <ListItem
           key={i}
           title={l.name}
@@ -45,4 +29,12 @@ const styles = StyleSheet.create({
   }
 });
 
-export default PizzasSalgadas;
+const mapStateToProps = state => ({
+  pizzas: state.pizzas.salgadas.list,
+  loading: state.pizzas.salgadas.loading,
+});
+
+export default connect(
+  mapStateToProps,
+  null,
+)(PizzasSalgadas);
