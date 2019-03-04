@@ -12,7 +12,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { ThemeProvider } from 'react-native-elements';
 
 import Header from './components/Header';
-import Home from './pages/Home';
+import Home from './containers/Home';
 import Footer from './components/Footer';
 
 type Props = {};
