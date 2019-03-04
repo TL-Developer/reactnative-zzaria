@@ -13,7 +13,6 @@ import { ThemeProvider } from 'react-native-elements';
 
 import Header from './components/Header';
 import Home from './containers/Home';
-import Footer from './components/Footer';
 
 type Props = {};
 export default class App extends Component<Props> {
