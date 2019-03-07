@@ -2,9 +2,9 @@ import React from 'react';
 import { Platform, StyleSheet, ScrollView, View, Text } from 'react-native';
 import { ListItem, Divider } from 'react-native-elements';
 
-const PizzasSalgadas = () => (
+const BrotosSalgados = () => (
   <View>
-    <Text style={styles.title}>Pizzas Salgadas</Text>
+    <Text style={styles.title}>Brotos Salgados</Text>
     <Divider style={{ backgroundColor: 'blue' }} />
     <ListItem
       title='Meio a Meio'
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default PizzasSalgadas
+export default BrotosSalgados;
