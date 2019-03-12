@@ -1,36 +1,25 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- * @lint-ignore-every XPLATJSCOPYRIGHT1
- */
-
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import { Platform, StyleSheet, View } from 'react-native';
 import { ThemeProvider } from 'react-native-elements';
 
-import Header from './components/Header';
-import Home from './containers/Home';
+import Routes from './routes';
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <ThemeProvider>
-        <View style={styles.container}>
-          <Header />
-          <Home />
-        </View>
-      </ThemeProvider>
-    );
-  }
-}
+const App = () => (
+  <ThemeProvider>
+    <View style={styles.container}>
+      <Routes />
+    </View>
+  </ThemeProvider>
+);
 
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    backgroundColor: '#fafafa'
+    backgroundColor: '#fafafa',
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
+
+export default App;
