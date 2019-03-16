@@ -7,20 +7,12 @@ const initialState = {
     loading: false,
     list: [
       {
-        name: 'Grande 2 sabores',
-        subtitle: 'Escolha dois sabores'
+        name: 'Calabresa',
+        description: 'mussarela e calabresa',
       },
       {
-        name: 'Grande',
-        subtitle: 'Escolha um sabor'
-      },
-      {
-        name: 'Broto 2 sabores',
-        subtitle: 'Escolha dois sabores'
-      },
-      {
-        name: 'Broto',
-        subtitle: 'Escolha um sabor'
+        name: 'Mussarela',
+        description: 'mussarela',
       },
     ],
   },

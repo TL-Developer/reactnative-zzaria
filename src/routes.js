@@ -2,11 +2,13 @@ import React from 'react';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 import Home from './pages/Home';
-import Pizzas from './pages/Pizzas';
+import PizzasSalgadasMeioaMeio from './pages/PizzasSalgadas/meioAmeio';
+import PizzasSalgadasInteira from './pages/PizzasSalgadas/inteira';
 
 const AppNavigator = createStackNavigator({
   Home,
-  Pizzas,
+  PizzasSalgadasMeioaMeio,
+  PizzasSalgadasInteira,
 });
 
 export default createAppContainer(AppNavigator);

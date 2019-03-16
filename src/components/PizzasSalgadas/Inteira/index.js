@@ -1,20 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import { ListItem, Divider } from 'react-native-elements';
+import { Platform, StyleSheet, ScrollView, View, Text } from 'react-native';
+import { ListItem } from 'react-native-elements';
 
-const PizzasSalgadas = ({
+const PizzaSalgadaMeioaMeio = ({
   pizzas,
 }) => (
   <View>
-    <Text style={styles.title}>Pizzas Salgadas</Text>
-    <Divider style={{ backgroundColor: 'blue' }} />
     {
-      pizzas.map((l, i) => (
+      pizzas.map((pizza, index) => (
         <ListItem
-          key={i}
-          title={l.name}
-          subtitle={l.subtitle}
+          key={index}
+          title={pizza.name}
+          subtitle={pizza.description}
         />
       ))
     }
@@ -37,4 +35,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   null,
-)(PizzasSalgadas);
+)(PizzaSalgadaMeioaMeio);

@@ -3,9 +3,9 @@ import { Platform, StyleSheet, ScrollView, Text } from 'react-native';
 import { ListItem, Divider } from 'react-native-elements';
 
 import PizzasSalgadas from '../../components/Home/PizzasSalgadas';
-import PizzasDoces from '../../components/Home/PizzasSalgadas';
-import BrotosSalgados from '../../components/Home/PizzasSalgadas';
-import BrotosDoces from '../../components/Home/PizzasSalgadas';
+import PizzasDoces from '../../components/Home/PizzasDoces';
+import BrotosSalgados from '../../components/Home/BrotosSalgados';
+import BrotosDoces from '../../components/Home/BrotosDoces';
 
 const Home = ({
   navigation,

@@ -11,11 +11,12 @@ const PizzasSalgadas = ({
     <ListItem
       title='Meio a Meio'
       subtitle='Escolha dois sabores'
-      onPress={() => navigation.push('Pizzas')}
+      onPress={() => navigation.push('PizzasSalgadasMeioaMeio')}
     />
     <ListItem
       title='Inteira'
       subtitle='Escolha um sabor'
+      onPress={() => navigation.push('PizzasSalgadasInteira')}
     />
   </View>
 );
