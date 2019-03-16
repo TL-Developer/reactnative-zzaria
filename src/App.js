@@ -6,9 +6,7 @@ import Routes from './routes';
 
 const App = () => (
   <ThemeProvider>
-    <View style={styles.container}>
-      <Routes />
-    </View>
+    <Routes style={styles.container} />
   </ThemeProvider>
 );
 

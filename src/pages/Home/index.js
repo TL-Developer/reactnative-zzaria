@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, ScrollView, View, Text } from 'react-native';
+import { Platform, StyleSheet, ScrollView, Text } from 'react-native';
 import { ListItem, Divider } from 'react-native-elements';
 
 import PizzasSalgadas from '../../components/Home/PizzasSalgadas';
@@ -7,32 +7,31 @@ import PizzasDoces from '../../components/Home/PizzasSalgadas';
 import BrotosSalgados from '../../components/Home/PizzasSalgadas';
 import BrotosDoces from '../../components/Home/PizzasSalgadas';
 
-export default class Home extends Component {
-  static navigationOptions = {
-    title: 'Home'
-  }
+const Home = ({
+  navigation,
+}) => (
+  <ScrollView style={styles.container}>
+    <PizzasSalgadas navigation={navigation} />
+    <PizzasDoces />
+    <BrotosSalgados />
+    <BrotosDoces />
+  </ScrollView>
+);
 
-  render() {
-
-    return (
-      <ScrollView style={styles.container}>
-        <PizzasSalgadas />
-        <PizzasDoces />
-        <BrotosSalgados />
-        <BrotosDoces />
-      </ScrollView>
-    )
-  }
+Home.navigationOptions = {
+  title: 'Página inicial',
 }
+
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
-    height: '90%',
-    padding: 10,
+    display: 'flex',
   },
   title: {
     fontSize: 22,
     marginTop: 10,
     marginBottom: 10,
+    color: '#000',
   }
 });
