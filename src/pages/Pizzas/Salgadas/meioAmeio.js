@@ -2,18 +2,18 @@ import React from 'react';
 import { Platform, StyleSheet, ScrollView, View, Text } from 'react-native';
 import { Divider } from 'react-native-elements';
 
-import Inteira from '../../components/PizzasSalgadas/Inteira';
+import MeioaMeio from '../../../components/Pizzas/Salgadas/MeioaMeio';
 
-const PizzaSalgadaInteiraPage = () => (
+const PizzaSalgadaMeioaMeioPage = () => (
   <ScrollView style={styles.container}>
-    <Text style={styles.title}>Escolha 1 sabor</Text>
+    <Text>Escolha 2 sabores</Text>
     <Divider />
-    <Inteira />
+    <MeioaMeio />
   </ScrollView>
 );
 
-PizzaSalgadaInteiraPage.navigationOptions = {
-  title: 'Pizzas Inteiras',
+PizzaSalgadaMeioaMeioPage.navigationOptions = {
+  title: 'Pizzas Meio a Meio',
 }
 
 const styles = StyleSheet.create({
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default PizzaSalgadaInteiraPage;
+export default PizzaSalgadaMeioaMeioPage;
