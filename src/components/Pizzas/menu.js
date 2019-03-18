@@ -28,27 +28,6 @@ const MenuPizzas = ({
       title='Inteira'
       subtitle='Escolha um sabor'
     />
-
-    <Text style={styles.title}>Brotos Salgados</Text>
-    <Divider style={{ backgroundColor: 'blue' }} />
-    <ListItem
-      title='Meio a Meio'
-      subtitle='Escolha dois sabores'
-    />
-    <ListItem
-      title='Inteira'
-      subtitle='Escolha um sabor'
-    />
-    <Text style={styles.title}>Brotos Doces</Text>
-    <Divider style={{ backgroundColor: 'blue' }} />
-    <ListItem
-      title='Meio a Meio'
-      subtitle='Escolha dois sabores'
-    />
-    <ListItem
-      title='Inteira'
-      subtitle='Escolha um sabor'
-    />
   </View>
 );
 

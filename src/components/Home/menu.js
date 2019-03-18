@@ -11,6 +11,9 @@ const MenuHome = ({
       onPress={() => navigation.push('Pizzas')}
     />
     <ListItem
+      title='Brotos'
+    />
+    <ListItem
       title='Esfihas'
     />
     <ListItem

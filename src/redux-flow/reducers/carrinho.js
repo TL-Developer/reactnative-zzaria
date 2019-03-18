@@ -1,34 +1,37 @@
-import {
-  GET_LIST_PIZZAS_SALGADAS,
-} from '../constants';
-
 const initialState = {
-  salgadas: {
-    loading: false,
+  pizzas: {
     list: [
       {
-        id: 0,
-        name: 'Calabresa',
+        name: 'calabresa',
         description: 'mussarela e calabresa',
         valor: 25.50,
-      },
-      {
-        id: 1,
-        name: 'Mussarela',
-        description: 'mussarela',
-        valor: 35.50,
-      },
+      }
     ],
+    total: 100,
   },
-  doces: {
-    loading: false,
+  brotos: {
     list: [],
-  }
+    total: 100,
+  },
+  esfihas: {
+    list: [],
+    total: 100,
+  },
+  beirutes: {
+    list: [],
+    total: 100,
+  },
+  bebidas: {
+    list: [],
+    total: 100,
+  },
+  pagamento: 'dinheiro',
+  total: 100.50,
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_LIST_PIZZAS_SALGADAS:
+    case 'CASE':
       return {
         ...state,
         pizzasSalgadas: {

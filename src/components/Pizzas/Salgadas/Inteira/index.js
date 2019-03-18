@@ -1,19 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Platform, StyleSheet, ScrollView, View, Text } from 'react-native';
-import { ListItem } from 'react-native-elements';
+import { ListItem, Divider } from 'react-native-elements';
 
 const PizzaSalgadaMeioaMeio = ({
   pizzas,
 }) => (
   <View>
     {
-      pizzas.map((pizza, index) => (
-        <ListItem
-          key={index}
-          title={pizza.name}
-          subtitle={pizza.description}
-        />
+      pizzas.map(pizza => (
+        <ScrollView key={pizza.id}>
+          <ListItem
+            key={pizza.id}
+            title={pizza.name}
+            subtitle={pizza.description}
+            badge={{ value: pizza.valor, textStyle: { color: 'white' }, containerStyle: { marginTop: 10 } }}
+          />
+          <Divider key={pizza.id} style={{ backgroundColor: 'red' }} />
+        </ScrollView>
       ))
     }
   </View>
@@ -24,7 +28,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     marginTop: 10,
     marginBottom: 10,
-  }
+  },
 });
 
 const mapStateToProps = state => ({
