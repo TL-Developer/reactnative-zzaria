@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, ScrollView, View, Text } from 'react-native';
+import { Platform, StyleSheet, ScrollView, Text } from 'react-native';
 import { ListItem, Divider } from 'react-native-elements';
 
-import MenuHome from '../../components/Home/menu';
+import Observacoes from '../../components/Observacoes';
 
-const Home = ({
+const Observacoes = ({
   navigation,
 }) => (
   <ScrollView style={styles.container}>
-    <MenuHome navigation={navigation} />
+    <Observacoes navigation={navigation} />
   </ScrollView>
 );
 
-Home.navigationOptions = {
+Observacoes.navigationOptions = {
   title: 'Página inicial',
 }
 
-export default Home;
+export default Observacoes;
 
 const styles = StyleSheet.create({
   container: {

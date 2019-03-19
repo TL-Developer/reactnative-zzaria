@@ -1,10 +1,10 @@
-import perfil from './perfil';
+import usuario from './usuario';
 import endereco from './endereco';
 import carrinho from './carrinho';
 import pizzas from './pizzas';
 
 export default {
-  perfil,
+  usuario,
   endereco,
   carrinho,
   pizzas,
