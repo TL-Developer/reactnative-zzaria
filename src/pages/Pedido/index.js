@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, ScrollView, Text } from 'react-native';
-import { ListItem, Divider } from 'react-native-elements';
 
-import Observacoes from '../../components/Observacoes';
+import Pedido from '../../components/Pedido';
 
-const Observacoes = ({
+const PedidoPage = ({
   navigation,
 }) => (
   <ScrollView style={styles.container}>
-    <Observacoes navigation={navigation} />
+    <Pedido navigation={navigation} />
   </ScrollView>
 );
 
-Observacoes.navigationOptions = {
-  title: 'Página inicial',
+PedidoPage.navigationOptions = {
+  title: 'Seu pedido',
 }
 
-export default Observacoes;
+export default PedidoPage;
 
 const styles = StyleSheet.create({
   container: {

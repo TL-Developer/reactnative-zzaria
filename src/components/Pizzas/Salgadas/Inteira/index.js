@@ -1,9 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Platform, StyleSheet, ScrollView, View, Text } from 'react-native';
 import { ListItem, Divider } from 'react-native-elements';
 
 const PizzaSalgadaMeioaMeio = ({
+  navigation,
+  loading,
   pizzas,
 }) => (
   <View>
@@ -15,6 +16,7 @@ const PizzaSalgadaMeioaMeio = ({
             title={pizza.name}
             subtitle={pizza.description}
             badge={{ value: pizza.valor, textStyle: { color: 'white' }, containerStyle: { marginTop: 10 } }}
+            onPress={() => navigation.push('Pedido', {pedido: pizza})}
           />
           <Divider key={pizza.id} style={{ backgroundColor: 'red' }} />
         </ScrollView>
@@ -31,12 +33,4 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = state => ({
-  pizzas: state.pizzas.salgadas.list,
-  loading: state.pizzas.salgadas.loading,
-});
-
-export default connect(
-  mapStateToProps,
-  null,
-)(PizzaSalgadaMeioaMeio);
+export default PizzaSalgadaMeioaMeio;

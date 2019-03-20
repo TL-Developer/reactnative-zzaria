@@ -3,7 +3,7 @@ import { Modal, Text, TouchableHighlight, View, Alert } from 'react-native';
 
 class ModalExample extends Component {
   state = {
-    modalVisible: true,
+    modalVisible: false,
   };
 
   setModalVisible(visible) {
@@ -16,7 +16,7 @@ class ModalExample extends Component {
         <Modal
           animationType="slide"
           transparent={true}
-          visible={this.state.modalVisible}
+          visible={false}
           onRequestClose={() => {
             Alert.alert('Modal has been closed.');
           }}>

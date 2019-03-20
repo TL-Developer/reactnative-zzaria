@@ -1,14 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Platform, StyleSheet, ScrollView, View, Text } from 'react-native';
 import { Divider } from 'react-native-elements';
 
 import PizzasSalgadasInteira from '../../../components/Pizzas/Salgadas/Inteira';
 
-const PizzaSalgadaInteiraPage = () => (
+const PizzaSalgadaInteiraPage = ({
+  navigation,
+  loading,
+  pizzas,
+}) => (
   <ScrollView style={styles.container}>
     <Text style={styles.title}>Escolha 1 sabor</Text>
     <Divider />
-    <PizzasSalgadasInteira />
+    <PizzasSalgadasInteira
+      navigation={navigation}
+      loading={loading}
+      pizzas={pizzas}
+    />
   </ScrollView>
 );
 
@@ -28,4 +37,12 @@ const styles = StyleSheet.create({
   }
 });
 
-export default PizzaSalgadaInteiraPage;
+const mapStateToProps = state => ({
+  pizzas: state.pizzas.salgadas.list,
+  loading: state.pizzas.salgadas.loading,
+});
+
+export default connect(
+  mapStateToProps,
+  null,
+)(PizzaSalgadaInteiraPage);
