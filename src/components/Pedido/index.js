@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, ScrollView, Text, Picker } from 'react-native';
+import { Platform, StyleSheet, ScrollView, Text, Picker, TextInput } from 'react-native';
 import { ListItem } from 'react-native-elements';
 
 const Pedido = ({
@@ -11,9 +11,16 @@ const Pedido = ({
     <Picker
       style={{height: 50, width: 100}}
      >
-      <Picker.Item label="Java" value="Sem borda" />
-      <Picker.Item label="JavaScript" value="Catupiry" />
+      <Picker.Item label="Sem borda" value="Sem borda" />
+      <Picker.Item label="Catupiry" value="Catupiry" />
     </Picker>
+
+    <Text>Observações</Text>
+    <TextInput
+      multiline={true}
+      numberOfLines={6}
+      placeholder="Ex: sem cebola..."
+    />
   </ScrollView>
 );
 
