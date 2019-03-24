@@ -16,7 +16,12 @@ const PizzaSalgadaMeioaMeio = ({
             title={pizza.name}
             subtitle={pizza.description}
             badge={{ value: pizza.valor, textStyle: { color: 'white' }, containerStyle: { marginTop: 10 } }}
-            onPress={() => navigation.push('Pedido', {pedido: pizza})}
+            onPress={() => navigation.push('Pedido', {
+              pedido: {
+                ...pizza,
+                type: 'pizza',
+              },
+            })}
           />
           <Divider key={pizza.id} style={{ backgroundColor: 'red' }} />
         </ScrollView>

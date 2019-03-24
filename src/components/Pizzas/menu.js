@@ -16,7 +16,7 @@ const MenuPizzas = ({
     <ListItem
       title='Inteira'
       subtitle='Escolha um sabor'
-      onPress={() => navigation.push('PizzasSalgadasInteira')}
+      onPress={() => navigation.navigate('PizzasSalgadasInteira')}
     />
     <Text style={styles.title}>Doces</Text>
     <Divider style={{ backgroundColor: 'blue' }} />
