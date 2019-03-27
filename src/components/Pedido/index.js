@@ -1,7 +1,19 @@
 import React, { PureComponent } from 'react';
-import { Platform, StyleSheet, View, ScrollView, Text, Picker, TextInput } from 'react-native';
-import { ListItem, Button } from 'react-native-elements';
+import styled from 'styled-components/native'
+
+import { Platform, View, ScrollView, Text, Picker } from 'react-native';
+import { ListItem, Button, Input } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+const ScrollViewContainer = styled.View`
+  flex: 1;
+`;
+
+const ActionsStyle = styled.View`
+  width: 100%;
+  justify-content: space-between;
+  align-items: center
+`
 
 class Pedido extends PureComponent {
   state = {
@@ -77,84 +89,94 @@ class Pedido extends PureComponent {
     } = this.state;
 
     return (
-      <ScrollView style={styles.container}>
-        <Text>{JSON.stringify(pedido)}</Text>
+      <ScrollViewContainer>
+        <View>
+          {(pedido.type === 'pizza' || pedido.type === 'brotos' || pedido.type === 'esfihas') && (
+            <View>
+              <Text>Selecione a borda</Text>
+              <Picker
+                style={{
+                  height: 50,
+                  width: 400,
+                }}
+                selectedValue={pedido.borda}
+                onValueChange={(value) => this.handleBorda(value)}
+              >
+                <Picker.Item
+                  label="Sem borda"
+                  value="Sem borda"
+                />
+                <Picker.Item
+                  label="Catupiry"
+                  value="Catupiry"
+                />
+                <Picker.Item
+                  label="Doce"
+                  value="Doce"
+                />
+              </Picker>
+            </View>
+            )
+            }
 
-        {(pedido.type === 'pizza' || pedido.type === 'brotos' || pedido.type === 'esfihas') && (
-          <Picker
-            style={{
-              height: 50,
-              width: 400,
-            }}
-            selectedValue={pedido.borda}
-            onValueChange={(value) => this.handleBorda(value)}
-          >
-            <Picker.Item
-              label="Sem"
-              value="Sem borda"
-            />
-            <Picker.Item
-              label="Catupiry"
-              value="Catupiry"
-            />
-            <Picker.Item
-              label="Doce"
-              value="Doce"
-            />
-          </Picker>
-        )
-        }
+          <Text>Observações</Text>
+          <Input
+            placeholder="Ex. sem cebola..."
+            leftIcon={
+              <Icon
+                name='user'
+                size={24}
+                color='black'
+              />
+            }
+          />
+        </View>
 
-        <Text>Observações</Text>
-        <TextInput
-          multiline={true}
-          numberOfLines={6}
-          placeholder="Ex: sem cebola..."
-        />
+        <ActionsStyle>
+          <View>
+            <Button
+              disabled={pedido.quantidade === 1}
+              icon={
+                <Icon
+                  name="minus"
+                  size={15}
+                  color="blue"
+                />
+              }
+              type="clear"
+              onPress={() => this.handleQuantidade('minus')}
+            />
+            <Text>Quantidade: { pedido.quantidade }</Text>
+            <Button
+              icon={
+                <Icon
+                  name="plus"
+                  size={15}
+                  color="blue"
+                />
+              }
+              type="clear"
+              onPress={() => this.handleQuantidade('plus')}
+            />
+          </View>
 
-        <Text>Quantidade: { pedido.quantidade }</Text>
-        <Button
-          disabled={pedido.quantidade === 1}
-          icon={
-            <Icon
-              name="minus"
-              size={15}
-              color="white"
+          <View>
+            <Button
+              icon={
+                <Icon
+                  name="shopping-cart"
+                  size={15}
+                  color="white"
+                />
+              }
+              title=" Adicionar ao carritinho"
+              onPress={() => this.handleAddAoCarrinho()}
             />
-          }
-          onPress={() => this.handleQuantidade('minus')}
-        />
-        <Button
-          icon={
-            <Icon
-              name="plus"
-              size={15}
-              color="white"
-            />
-          }
-          onPress={() => this.handleQuantidade('plus')}
-        />
-
-        <Button
-          icon={
-            <Icon
-              name="shopping-cart"
-              size={15}
-              color="white"
-            />
-          }
-          title=" Adicionar ao carritinho"
-          onPress={() => this.handleAddAoCarrinho()}
-        />
-      </ScrollView>
+          </View>
+        </ActionsStyle>
+      </ScrollViewContainer>
     );
   }
 }
 
 export default Pedido;
-
-const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-  },
-});
