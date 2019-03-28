@@ -1,29 +1,11 @@
+import {
+  ADD_AO_CARRINHO,
+} from '../constants';
+
 const initialState = {
-  pizzas: {
-    list: [
-      {
-        name: 'calabresa',
-        description: 'mussarela e calabresa',
-        valor: 25.50,
-      }
-    ],
-    total: 100,
-  },
-  brotos: {
+  pedidos: {
+    loading: false,
     list: [],
-    total: 100,
-  },
-  esfihas: {
-    list: [],
-    total: 100,
-  },
-  beirutes: {
-    list: [],
-    total: 100,
-  },
-  bebidas: {
-    list: [],
-    total: 100,
   },
   pagamento: 'dinheiro',
   total: 100.50,
@@ -31,13 +13,16 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'CASE':
+    case ADD_AO_CARRINHO:
       return {
         ...state,
-        pizzasSalgadas: {
-          ...state.pizzasSalgadas,
-          list: action.payload
-        }
+        pedidos: {
+          ...state.pedidos,
+          list: [
+            ...state.pedidos.list,
+            action.payload,
+          ],
+        },
       }
 
     default:

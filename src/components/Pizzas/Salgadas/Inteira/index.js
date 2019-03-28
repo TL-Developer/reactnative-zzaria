@@ -12,7 +12,7 @@ const PizzaSalgadaMeioaMeio = ({
       pizzas.map(pizza => (
         <ScrollView key={pizza.id}>
           <ListItem
-            key={pizza.id}
+            key={pizza.name}
             title={pizza.name}
             subtitle={pizza.description}
             badge={{ value: pizza.valor, textStyle: { color: 'white' }, containerStyle: { marginTop: 10 } }}

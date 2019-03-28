@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
 
 import { Platform, View, ScrollView, Text, Picker } from 'react-native';
-import { ListItem, Button, Input } from 'react-native-elements';
+import { ListItem, Button, Input, Divider } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const ScrollViewContainer = styled.View`
@@ -14,6 +14,18 @@ const ActionsStyle = styled.View`
   justify-content: space-between;
   align-items: center
 `
+
+const PedidoStyle = styled.View`
+  margin: 5px;
+`;
+
+const PedidoTitleStyle = styled.Text`
+  font-size: 20px;
+`;
+
+const PedidoDescriptionStyle = styled.Text`
+  font-size: 14px;
+`;
 
 class Pedido extends PureComponent {
   state = {
@@ -78,7 +90,14 @@ class Pedido extends PureComponent {
   handleAddAoCarrinho = () => {
     const {
       navigation,
+      addAoCarrinhoDispatch,
     } = this.props;
+
+    const {
+      pedido,
+    } = this.state;
+
+    addAoCarrinhoDispatch(pedido);
 
     navigation.navigate('Home');
   }
@@ -90,6 +109,13 @@ class Pedido extends PureComponent {
 
     return (
       <ScrollViewContainer>
+        <PedidoStyle>
+          <PedidoTitleStyle>{ pedido.name }</PedidoTitleStyle>
+          <PedidoDescriptionStyle>{ pedido.description }</PedidoDescriptionStyle>
+        </PedidoStyle>
+
+        <Divider style={{ backgroundColor: 'red' }} />
+
         <View>
           {(pedido.type === 'pizza' || pedido.type === 'brotos' || pedido.type === 'esfihas') && (
             <View>

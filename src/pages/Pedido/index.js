@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, ScrollView, Text } from 'react-native';
+import { connect } from 'react-redux';
 
 import Pedido from '../../components/Pedido';
 
+import {
+  addAoCarrinho,
+} from '../../redux-flow/actions/carrinho';
+
 const PedidoPage = ({
   navigation,
+  addAoCarrinhoDispatch,
 }) => (
   <ScrollView style={styles.container}>
-    <Pedido navigation={navigation} />
+    <Pedido
+      navigation={navigation}
+      addAoCarrinhoDispatch={addAoCarrinhoDispatch}
+    />
   </ScrollView>
 );
 
@@ -15,7 +24,9 @@ PedidoPage.navigationOptions = {
   title: 'Seu pedido',
 }
 
-export default PedidoPage;
+const mapDispatchToProps = dispatch => ({
+  addAoCarrinhoDispatch: payload => dispatch(addAoCarrinho(payload)),
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -28,3 +39,8 @@ const styles = StyleSheet.create({
     color: '#000',
   }
 });
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(PedidoPage);

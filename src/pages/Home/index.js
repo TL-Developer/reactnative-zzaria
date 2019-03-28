@@ -3,12 +3,14 @@ import { Platform, StyleSheet, ScrollView, View, Text } from 'react-native';
 import { ListItem, Divider } from 'react-native-elements';
 
 import MenuHome from '../../components/Home/menu';
+import BotaoCarrinho from '../../components/Carrinho/BotaoCarrinho';
 
 const Home = ({
   navigation,
 }) => (
   <ScrollView style={styles.container}>
     <MenuHome navigation={navigation} />
+    <BotaoCarrinho navigation={navigation} />
   </ScrollView>
 );
 
