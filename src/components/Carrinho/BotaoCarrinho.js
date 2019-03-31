@@ -26,7 +26,7 @@ const BotaoCarrinho = ({
         />
       }
       title=""
-      onPress={() => this.handleAddAoCarrinho()}
+      onPress={() => navigation.navigate('Carrinho')}
     />
   </BotaoCarrinhoStyle>
 );

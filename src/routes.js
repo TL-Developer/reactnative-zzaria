@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Pizzas from './pages/Pizzas';
 import PizzasSalgadasInteira from './pages/Pizzas/Salgadas/inteira';
 import Pedido from './pages/Pedido';
+import Carrinho from './pages/Carrinho';
 
 const AppNavigator = createStackNavigator(
   {
@@ -12,6 +13,7 @@ const AppNavigator = createStackNavigator(
     Pizzas,
     PizzasSalgadasInteira,
     Pedido,
+    Carrinho,
   }
 );
 

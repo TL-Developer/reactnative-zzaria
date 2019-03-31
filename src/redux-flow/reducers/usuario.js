@@ -10,15 +10,18 @@ const initialState = {
   cpf: '37284575824',
   email: 'tiago.lima.developer@gmail.com',
   endereco: {
-    bairro: 'JD São martinho',
-    lagrodouro: 'Rua borboleta amarela',
-    numero: '57',
+    bairro: {
+      _id: 142,
+      nome: 'jd. Noemia',
+      valor: '2,00'
+    },
     cep: '08081-570',
-    complemento: 'casa',
-    referencia: 'perto do instituto alana',
-    cidade: 'sao paulo',
+    cidade: 'São Paulo',
     uf: 'SP',
-    valor: 8.00,
+    endereco: 'Rua Borboleta Amarela',
+    numero: '45',
+    referencia: 'aaaaa',
+    complemento: 'casa',
   }
 };
 
