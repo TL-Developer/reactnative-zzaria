@@ -3,6 +3,7 @@ import { Platform, StyleSheet, ScrollView, Text } from 'react-native';
 import { connect } from 'react-redux';
 
 import Carrinho from '../../components/Carrinho';
+import BotaoComprar from '../../components/Carrinho/BotaoComprar';
 
 import {
   setFormaPG,
@@ -21,6 +22,7 @@ const CarrinhoPage = ({
       pagamentos={pagamentos}
       setFormaPgDispatch={setFormaPgDispatch}
     />
+    <BotaoComprar />
   </ScrollView>
 );
 
