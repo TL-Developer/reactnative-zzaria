@@ -7,15 +7,23 @@ const initialState = {
     loading: false,
     list: [
       {
+        id: 0,
         name: 'Calabresa',
         description: 'mussarela e calabresa',
+        valor: 25.50,
       },
       {
+        id: 1,
         name: 'Mussarela',
         description: 'mussarela',
+        valor: 35.50,
       },
     ],
   },
+  doces: {
+    loading: false,
+    list: [],
+  }
 };
 
 const reducer = (state = initialState, action) => {

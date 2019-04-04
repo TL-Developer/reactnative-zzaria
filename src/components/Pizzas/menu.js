@@ -6,7 +6,7 @@ const MenuPizzas = ({
   navigation,
 }) => (
   <View>
-    <Text style={styles.title}>Pizzas Salgadas</Text>
+    <Text style={styles.title}>Salgadas</Text>
     <Divider style={{ backgroundColor: 'blue' }} />
     <ListItem
       title='Meio a Meio'
@@ -16,30 +16,9 @@ const MenuPizzas = ({
     <ListItem
       title='Inteira'
       subtitle='Escolha um sabor'
-      onPress={() => navigation.push('PizzasSalgadasInteira')}
+      onPress={() => navigation.navigate('PizzasSalgadasInteira')}
     />
-    <Text style={styles.title}>Pizzas Doces</Text>
-    <Divider style={{ backgroundColor: 'blue' }} />
-    <ListItem
-      title='Meio a Meio'
-      subtitle='Escolha dois sabores'
-    />
-    <ListItem
-      title='Inteira'
-      subtitle='Escolha um sabor'
-    />
-
-    <Text style={styles.title}>Brotos Salgados</Text>
-    <Divider style={{ backgroundColor: 'blue' }} />
-    <ListItem
-      title='Meio a Meio'
-      subtitle='Escolha dois sabores'
-    />
-    <ListItem
-      title='Inteira'
-      subtitle='Escolha um sabor'
-    />
-    <Text style={styles.title}>Brotos Doces</Text>
+    <Text style={styles.title}>Doces</Text>
     <Divider style={{ backgroundColor: 'blue' }} />
     <ListItem
       title='Meio a Meio'
