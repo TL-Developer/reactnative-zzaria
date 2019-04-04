@@ -1,25 +1,49 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Platform, StyleSheet, ScrollView, View, Text } from 'react-native';
 import { Divider } from 'react-native-elements';
 
 import PizzasSalgadasInteira from '../../../components/Pizzas/Salgadas/Inteira';
 
-const PizzaSalgadaInteiraPage = ({
-  navigation,
-  loading,
-  pizzas,
-}) => (
-  <ScrollView style={styles.container}>
-    <Text style={styles.title}>Escolha 1 sabor</Text>
-    <Divider />
-    <PizzasSalgadasInteira
-      navigation={navigation}
-      loading={loading}
-      pizzas={pizzas}
-    />
-  </ScrollView>
-);
+import {
+  getListPizzasSalgadas,
+} from '../../../redux-flow/actions/pizzasSalgadas';
+
+class PizzaSalgadaInteiraPage extends PureComponent {
+
+  componentDidMount() {
+    const {
+      getListPizzasSalgadasDispatch,
+    } = this.props;
+
+    getListPizzasSalgadasDispatch();
+  }
+
+  render() {
+    const {
+      navigation,
+      getListPizzasSalgadasDispatch,
+      loading,
+      pizzas,
+    } = this.props;
+
+    return (
+      <ScrollView style={styles.container}>
+        <Text style={styles.title}>Escolha 1 sabor</Text>
+        <Divider />
+        <Text>
+          {loading && 'loading...'}
+          {loading}
+        </Text>
+        <PizzasSalgadasInteira
+          navigation={navigation}
+          loading={loading}
+          pizzas={pizzas}
+        />
+      </ScrollView>
+    )
+  }
+}
 
 PizzaSalgadaInteiraPage.navigationOptions = {
   title: 'Pizzas Inteiras',
@@ -42,7 +66,11 @@ const mapStateToProps = state => ({
   loading: state.pizzas.salgadas.loading,
 });
 
+const mapDispatchToProps = dispatch => ({
+  getListPizzasSalgadasDispatch: payload => dispatch(getListPizzasSalgadas()),
+});
+
 export default connect(
   mapStateToProps,
-  null,
+  mapDispatchToProps,
 )(PizzaSalgadaInteiraPage);

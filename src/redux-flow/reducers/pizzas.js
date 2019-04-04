@@ -1,5 +1,6 @@
 import {
-  GET_LIST_PIZZAS_SALGADAS,
+  GET_LIST_PIZZAS_SALGADAS_SUCCESS,
+  LOADING_PIZZAS_SALGADAS,
 } from '../constants';
 
 const initialState = {
@@ -27,13 +28,23 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+  console.log(action);
   switch (action.type) {
-    case GET_LIST_PIZZAS_SALGADAS:
+    case GET_LIST_PIZZAS_SALGADAS_SUCCESS:
       return {
         ...state,
         pizzasSalgadas: {
           ...state.pizzasSalgadas,
-          list: action.payload
+          list: action.payload,
+        }
+      }
+
+    case LOADING_PIZZAS_SALGADAS:
+      return {
+        ...state,
+        pizzasSalgadas: {
+          ...state.pizzasSalgadas,
+          loading: action.payload,
         }
       }
 
