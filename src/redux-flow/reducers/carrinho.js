@@ -6,21 +6,7 @@ import {
 const initialState = {
   pedidos: {
     loading: false,
-    list: [
-      {
-        qtd: 1,
-        nome: 'Pizza 1/2 alemã 1/2 chocolate c/ confetes',
-        observacoes: 'tetttsts',
-        borda: {
-          _id: 111,
-          nome: 'Borda catupiry',
-          valor: '0,00'
-        },
-        valorBorda: '0,00',
-        valorNormal: '37,00',
-        valor: 37
-      },
-    ],
+    list: [],
   },
   troco: '50,00',
   formaPg: '',

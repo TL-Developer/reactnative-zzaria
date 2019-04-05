@@ -27,6 +27,11 @@ const PedidoDescriptionStyle = styled.Text`
   font-size: 14px;
 `;
 
+const PedidoValorStyle = styled.Text`
+  font-size: 22px;
+  color: red;
+`;
+
 class Pedido extends PureComponent {
   state = {
     pedido: {
@@ -110,8 +115,9 @@ class Pedido extends PureComponent {
     return (
       <ScrollViewContainer>
         <PedidoStyle>
-          <PedidoTitleStyle>{ pedido.name }</PedidoTitleStyle>
-          <PedidoDescriptionStyle>{ pedido.description }</PedidoDescriptionStyle>
+          <PedidoTitleStyle>{ pedido.nome }</PedidoTitleStyle>
+          <PedidoDescriptionStyle>{ pedido.descricao }</PedidoDescriptionStyle>
+          <PedidoValorStyle>{ pedido.valor }</PedidoValorStyle>
         </PedidoStyle>
 
         <Divider style={{ backgroundColor: 'red' }} />

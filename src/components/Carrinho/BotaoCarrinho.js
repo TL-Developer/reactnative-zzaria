@@ -16,18 +16,23 @@ const BotaoCarrinho = ({
   pedidos,
 }) => (
   <BotaoCarrinhoStyle>
-    <Badge value={pedidos.length} status="error" />
-    <Button
-      icon={
-        <Icon
-          name="shopping-cart"
-          size={15}
-          color="white"
+    {pedidos.length > 0 && (
+      <View>
+        <Badge value={pedidos.length} status="error" />
+        <Button
+          icon={
+            <Icon
+              name="shopping-cart"
+              size={15}
+              color="white"
+            />
+          }
+          title=""
+          onPress={() => navigation.navigate('Carrinho')}
         />
-      }
-      title=""
-      onPress={() => navigation.navigate('Carrinho')}
-    />
+      </View>
+    )
+    }
   </BotaoCarrinhoStyle>
 );
 

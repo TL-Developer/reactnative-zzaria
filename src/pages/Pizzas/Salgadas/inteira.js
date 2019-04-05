@@ -22,7 +22,6 @@ class PizzaSalgadaInteiraPage extends PureComponent {
   render() {
     const {
       navigation,
-      getListPizzasSalgadasDispatch,
       loading,
       pizzas,
     } = this.props;
@@ -31,10 +30,7 @@ class PizzaSalgadaInteiraPage extends PureComponent {
       <ScrollView style={styles.container}>
         <Text style={styles.title}>Escolha 1 sabor</Text>
         <Divider />
-        <Text>
-          {loading && 'loading...'}
-          {loading}
-        </Text>
+        <Text>{loading && 'Carregando pizzas...'}</Text>
         <PizzasSalgadasInteira
           navigation={navigation}
           loading={loading}

@@ -7,27 +7,33 @@ const PizzaSalgadaMeioaMeio = ({
   loading,
   pizzas,
 }) => (
-  <View>
-    {
+  <ScrollView>
+    {pizzas.length > 0 && (
       pizzas.map(pizza => (
-        <ScrollView key={pizza.id}>
+        <View key={pizza.id}>
           <ListItem
-            key={pizza.name}
-            title={pizza.name}
-            subtitle={pizza.description}
-            badge={{ value: pizza.valor, textStyle: { color: 'white' }, containerStyle: { marginTop: 10 } }}
+            key={pizza.id}
+            title={pizza.nome}
+            subtitle={pizza.descricao}
+            badge={{ value: pizza.valorGrande, textStyle: { color: 'white' }, containerStyle: { marginTop: 10 } }}
             onPress={() => navigation.push('Pedido', {
               pedido: {
                 ...pizza,
+                valor: pizza.valorGrande,
                 type: 'pizza',
               },
             })}
           />
           <Divider key={pizza.id} style={{ backgroundColor: 'red' }} />
-        </ScrollView>
+        </View>
       ))
+    )
     }
-  </View>
+
+    {(pizzas.length === 0 && !loading) &&
+      <Text>Não temos pizzas.</Text>
+    }
+  </ScrollView>
 );
 
 const styles = StyleSheet.create({

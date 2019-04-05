@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { Platform, View, Text, Picker } from 'react-native';
-import { Badge, Button } from 'react-native-elements';
+import { Badge, Button, ListItem, Divider } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const CarrinhoStyle = styled.View`
@@ -15,7 +15,20 @@ const BotaoCarrinho = ({
   setFormaPgDispatch,
 }) => (
   <CarrinhoStyle>
-    <Text>{JSON.stringify(carrinho)}</Text>
+    <Text>Pedido:</Text>
+    {
+      carrinho.pedidos.list.map(pedido => (
+        <View key={pedido.id}>
+          <ListItem
+            key={pedido.id}
+            title={pedido.nome}
+            subtitle={pedido.descricao}
+            badge={{ value: pedido.valor, textStyle: { color: 'white' }, containerStyle: { marginTop: 10 } }}
+          />
+          <Divider key={pedido.id} style={{ backgroundColor: 'red' }} />
+        </View>
+      ))
+    }
     <Text>{carrinho.formaPg}</Text>
     <Text>Forma de pagamento</Text>
     <Picker

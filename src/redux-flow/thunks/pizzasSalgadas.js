@@ -9,8 +9,9 @@ const endpoint = '/produtos/pizzas?token=eyJhbGciOiJIUzI1NiJ9.cGF1bG8.C2wuETOYPz
 
 export const getPizzasSalgadasTK = dispatch => {
   dispatch(loadingPizzasSalgadas(true));
-  request.get(endpoint).then(data => {
-    dispatch(getListPizzasSalgadasSuccess(data));
+  request.get(endpoint).then(result => {
+    dispatch(loadingPizzasSalgadas(false));
+    dispatch(getListPizzasSalgadasSuccess(result.data));
   }).catch(err => {
     alert('Não foi possível trazer os produtos');
   });
