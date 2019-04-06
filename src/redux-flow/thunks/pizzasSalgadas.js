@@ -13,6 +13,6 @@ export const getPizzasSalgadasTK = dispatch => {
     dispatch(loadingPizzasSalgadas(false));
     dispatch(getListPizzasSalgadasSuccess(result.data));
   }).catch(err => {
-    alert('Não foi possível trazer os produtos');
+    alert('Não foi possível trazer os produtos' + err);
   });
 };

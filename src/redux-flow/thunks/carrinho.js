@@ -12,7 +12,8 @@ export const savePedidoTK = (dispatch, getState) => {
     nome: getState().usuario.nome,
     pedido: getState().carrinho.pedidos.list,
     valor: getState().carrinho.valor,
-    telefones: getState().usuario.telefones,
+    telefone: getState().usuario.telefones.fixo,
+    celular: getState().usuario.telefones.celular,
     formaPg: {
       _id: 137,
       nome: 'Elo refeição'

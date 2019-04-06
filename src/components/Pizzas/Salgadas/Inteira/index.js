@@ -18,8 +18,9 @@ const PizzaSalgadaMeioaMeio = ({
             badge={{ value: pizza.valorGrande, textStyle: { color: 'white' }, containerStyle: { marginTop: 10 } }}
             onPress={() => navigation.push('Pedido', {
               pedido: {
-                ...pizza,
-                valor: pizza.valorGrande,
+                nome: pizza.nome,
+                descricao: pizza.descricao,
+                valor: parseInt(pizza.valorGrande),
                 type: 'pizza',
               },
             })}

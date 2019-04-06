@@ -36,7 +36,7 @@ class Pedido extends PureComponent {
   state = {
     pedido: {
       borda: 'Sem',
-      quantidade: 1,
+      qtd: 1,
     },
   }
 
@@ -68,15 +68,15 @@ class Pedido extends PureComponent {
         ...state,
         pedido: {
           ...state.pedido,
-          quantidade: state.pedido.quantidade += 1,
+          qtd: state.pedido.qtd += 1,
         },
       }));
-    } else if (type === 'minus' && pedido.quantidade > 1) {
+    } else if (type === 'minus' && pedido.qtd > 1) {
       this.setState(state => ({
         ...state,
         pedido: {
           ...state.pedido,
-          quantidade: state.pedido.quantidade -= 1,
+          qtd: state.pedido.qtd -= 1,
         },
       }));
     }
@@ -88,6 +88,7 @@ class Pedido extends PureComponent {
       pedido: {
         ...state.pedido,
         borda: value,
+        observacoes: '',
       },
     }));
   }
@@ -167,7 +168,7 @@ class Pedido extends PureComponent {
         <ActionsStyle>
           <View>
             <Button
-              disabled={pedido.quantidade === 1}
+              disabled={pedido.qtd === 1}
               icon={
                 <Icon
                   name="minus"
@@ -178,7 +179,7 @@ class Pedido extends PureComponent {
               type="clear"
               onPress={() => this.handleQuantidade('minus')}
             />
-            <Text>Quantidade: { pedido.quantidade }</Text>
+            <Text>Quantidade: { pedido.qtd }</Text>
             <Button
               icon={
                 <Icon

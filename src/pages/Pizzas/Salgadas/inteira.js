@@ -13,10 +13,13 @@ class PizzaSalgadaInteiraPage extends PureComponent {
 
   componentDidMount() {
     const {
+      pizzas,
       getListPizzasSalgadasDispatch,
     } = this.props;
 
-    getListPizzasSalgadasDispatch();
+    if (pizzas.length === 0) {
+      getListPizzasSalgadasDispatch();
+    }
   }
 
   render() {

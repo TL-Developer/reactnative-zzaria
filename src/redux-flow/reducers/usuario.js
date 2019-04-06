@@ -1,9 +1,10 @@
 const initialState = {
   nome: 'tiago juvenal de lima',
   telefones: {
-    fixo: '991153573',
-    celular: '991153573',
+    fixo: '11-25855522',
+    celular: '11-958995522',
   },
+  token: 'eyJhbGciOiJIUzI1NiJ9.cGF1bG8.C2wuETOYPzALi8wHVI7Nk9c23AqFpu8-Q0BUe4SO7Jg',
   avatar: 'url',
   genero: 'masculino',
   dataNascimento: '11/11/1989',
@@ -11,7 +12,7 @@ const initialState = {
   email: 'tiago.lima.developer@gmail.com',
   endereco: {
     bairro: {
-      _id: 142,
+      _id: 108,
       nome: 'jd. Noemia',
       valor: '2,00'
     },
