@@ -1,6 +1,7 @@
 import {
   ADD_AO_CARRINHO,
   SET_FORMA_PG,
+  SOMA_VALOR_PEDIDOS,
 } from '../constants';
 
 const initialState = {
@@ -10,7 +11,7 @@ const initialState = {
   },
   troco: '50,00',
   formaPg: '',
-  valor: 100.50,
+  valor: 0,
 };
 
 const reducer = (state = initialState, action) => {
@@ -28,10 +29,17 @@ const reducer = (state = initialState, action) => {
       }
 
     case SET_FORMA_PG:
-      console.log(action.payload)
       return {
         ...state,
         formaPg: action.payload,
+      }
+
+     case SOMA_VALOR_PEDIDOS:
+      return {
+        ...state,
+        valor: state.pedidos.list.reduce((soma, pedido) => (
+          soma += ( pedido.valor * pedido.qtd )
+        ), 0),
       }
 
     default:

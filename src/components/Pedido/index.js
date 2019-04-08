@@ -97,6 +97,7 @@ class Pedido extends PureComponent {
     const {
       navigation,
       addAoCarrinhoDispatch,
+      somaValorPedidosDispatch,
     } = this.props;
 
     const {
@@ -104,6 +105,7 @@ class Pedido extends PureComponent {
     } = this.state;
 
     addAoCarrinhoDispatch(pedido);
+    somaValorPedidosDispatch();
 
     navigation.navigate('Home');
   }

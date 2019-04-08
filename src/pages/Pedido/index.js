@@ -6,16 +6,19 @@ import Pedido from '../../components/Pedido';
 
 import {
   addAoCarrinho,
+  somaValorPedidos,
 } from '../../redux-flow/actions/carrinho';
 
 const PedidoPage = ({
   navigation,
   addAoCarrinhoDispatch,
+  somaValorPedidosDispatch,
 }) => (
   <ScrollView style={styles.container}>
     <Pedido
       navigation={navigation}
       addAoCarrinhoDispatch={addAoCarrinhoDispatch}
+      somaValorPedidosDispatch={somaValorPedidosDispatch}
     />
   </ScrollView>
 );
@@ -26,6 +29,7 @@ PedidoPage.navigationOptions = {
 
 const mapDispatchToProps = dispatch => ({
   addAoCarrinhoDispatch: payload => dispatch(addAoCarrinho(payload)),
+  somaValorPedidosDispatch: payload => dispatch(somaValorPedidos(payload)),
 });
 
 const styles = StyleSheet.create({

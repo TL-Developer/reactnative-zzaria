@@ -15,6 +15,7 @@ const BotaoCarrinho = ({
   setFormaPgDispatch,
 }) => (
   <CarrinhoStyle>
+    <Text>{JSON.stringify(carrinho)}</Text>
     <Text>Pedido:</Text>
     {
       carrinho.pedidos.list.map(pedido => (
