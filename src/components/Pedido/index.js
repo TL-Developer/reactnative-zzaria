@@ -37,6 +37,7 @@ class Pedido extends PureComponent {
     pedido: {
       borda: 'Sem',
       qtd: 1,
+      observacoes: '',
     },
   }
 
@@ -88,7 +89,6 @@ class Pedido extends PureComponent {
       pedido: {
         ...state.pedido,
         borda: value,
-        observacoes: '',
       },
     }));
   }
@@ -108,6 +108,16 @@ class Pedido extends PureComponent {
     navigation.navigate('Home');
   }
 
+  handleObservacoes = (value) => {
+    this.setState(state => ({
+      ...state,
+      pedido: {
+        ...state.pedido,
+        observacoes: value,
+      },
+    }));
+  };
+
   render() {
     const {
       pedido,
@@ -122,6 +132,8 @@ class Pedido extends PureComponent {
         </PedidoStyle>
 
         <Divider style={{ backgroundColor: 'red' }} />
+
+        <Text>{JSON.stringify(pedido)}</Text>
 
         <View>
           {(pedido.type === 'pizza' || pedido.type === 'brotos' || pedido.type === 'esfihas') && (
@@ -154,6 +166,7 @@ class Pedido extends PureComponent {
 
           <Text>Observações</Text>
           <Input
+            onChangeText={(value) => this.handleObservacoes(value)}
             placeholder="Ex. sem cebola..."
             leftIcon={
               <Icon

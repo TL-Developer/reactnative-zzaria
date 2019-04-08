@@ -12,7 +12,7 @@ const PizzaSalgadaMeioaMeio = ({
       pizzas.map(pizza => (
         <View key={pizza.id}>
           <ListItem
-            key={pizza.id}
+            key={pizza._id}
             title={pizza.nome}
             subtitle={pizza.descricao}
             badge={{ value: pizza.valorGrande, textStyle: { color: 'white' }, containerStyle: { marginTop: 10 } }}
