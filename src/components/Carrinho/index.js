@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { Platform, View, Text, Picker } from 'react-native';
-import { Badge, Button, ListItem, Divider } from 'react-native-elements';
+import { Badge, Button, ListItem, Divider, Input } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const CarrinhoStyle = styled.View`
@@ -44,10 +44,19 @@ const BotaoCarrinho = ({
         <Picker.Item
           key={pg._id}
           label={pg.nome}
-          value={pg.nome}
+          value={JSON.stringify(pg)}
         />
       ))}
     </Picker>
+    {
+      carrinho.formaPg.indexOf('Dinheiro') !== -1 && (
+        <View>
+        <Input
+            placeholder='Troco para quanto/'
+          />
+        </View>
+      )
+    }
   </CarrinhoStyle>
 );
 
