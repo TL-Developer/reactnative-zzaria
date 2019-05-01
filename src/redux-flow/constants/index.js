@@ -10,3 +10,4 @@ export const ADD_AO_CARRINHO = 'CARRINHO.::.ADD_AO_CARRINHO.::.';
 export const SET_FORMA_PG = 'CARRINHO.::.SET_FORMA_PG.::.';
 export const SAVE_PEDIDO = 'CARRINHO.::.SAVE_PEDIDO.::.';
 export const SOMA_VALOR_PEDIDOS = 'CARRINHO.::.SOMA_VALOR_PEDIDOS.::.';
+export const SET_TROCO = 'CARRINHO.::.SET_TROCO.::.';

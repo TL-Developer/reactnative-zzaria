@@ -135,8 +135,6 @@ class Pedido extends PureComponent {
 
         <Divider style={{ backgroundColor: 'red' }} />
 
-        <Text>{JSON.stringify(pedido)}</Text>
-
         <View>
           {(pedido.type === 'pizza' || pedido.type === 'brotos' || pedido.type === 'esfihas') && (
             <View>

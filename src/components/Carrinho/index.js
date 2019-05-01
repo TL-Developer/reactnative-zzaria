@@ -13,6 +13,7 @@ const BotaoCarrinho = ({
   carrinho,
   pagamentos,
   setFormaPgDispatch,
+  setTrocoDispatch,
 }) => (
   <CarrinhoStyle>
     <Text>{JSON.stringify(carrinho)}</Text>
@@ -51,9 +52,12 @@ const BotaoCarrinho = ({
     {
       carrinho.formaPg.indexOf('Dinheiro') !== -1 && (
         <View>
-        <Input
-            placeholder='Troco para quanto/'
-          />
+          <Input
+            placeholder="Troco para quanto"
+            value={carrinho.troco}
+            onChange={(e) => setTrocoDispatch(e.target.value)}
+            />
+          <Text>Troco para R$: {carrinho.troco}</Text>
         </View>
       )
     }

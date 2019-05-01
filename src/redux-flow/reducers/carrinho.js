@@ -2,6 +2,7 @@ import {
   ADD_AO_CARRINHO,
   SET_FORMA_PG,
   SOMA_VALOR_PEDIDOS,
+  SET_TROCO,
 } from '../constants';
 
 const initialState = {
@@ -9,7 +10,7 @@ const initialState = {
     loading: false,
     list: [],
   },
-  troco: '50,00',
+  troco: 0,
   formaPg: '',
   valor: 0,
 };
@@ -34,12 +35,19 @@ const reducer = (state = initialState, action) => {
         formaPg: action.payload,
       }
 
-     case SOMA_VALOR_PEDIDOS:
+    case SOMA_VALOR_PEDIDOS:
       return {
         ...state,
         valor: state.pedidos.list.reduce((soma, pedido) => (
           soma += ( pedido.valor * pedido.qtd )
         ), 0),
+      }
+
+    case SET_TROCO:
+    debugger
+      return {
+        ...state,
+        troco: action.payload,
       }
 
     default:

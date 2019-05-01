@@ -2,6 +2,7 @@ import {
   ADD_AO_CARRINHO,
   SET_FORMA_PG,
   SOMA_VALOR_PEDIDOS,
+  SET_TROCO,
 } from '../constants';
 
 import {
@@ -20,6 +21,11 @@ export const setFormaPG = payload => ({
 
 export const somaValorPedidos = payload => ({
   type: SOMA_VALOR_PEDIDOS,
+  payload,
+});
+
+export const setTroco = payload => ({
+  type: SET_TROCO,
   payload,
 });
 

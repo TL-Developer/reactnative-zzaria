@@ -7,6 +7,7 @@ import BotaoComprar from '../../components/Carrinho/BotaoComprar';
 
 import {
   setFormaPG,
+  setTroco,
 } from '../../redux-flow/actions/carrinho';
 
 const CarrinhoPage = ({
@@ -14,6 +15,7 @@ const CarrinhoPage = ({
   carrinho,
   pagamentos,
   setFormaPgDispatch,
+  setTrocoDispatch,
 }) => (
   <ScrollView style={styles.container}>
     <Carrinho
@@ -21,6 +23,7 @@ const CarrinhoPage = ({
       carrinho={carrinho}
       pagamentos={pagamentos}
       setFormaPgDispatch={setFormaPgDispatch}
+      setTrocoDispatch={setTrocoDispatch}
     />
     <BotaoComprar />
   </ScrollView>
@@ -37,6 +40,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setFormaPgDispatch: payload => dispatch(setFormaPG(payload)),
+  setTrocoDispatch: payload => dispatch(setTroco(payload)),
 });
 
 const styles = StyleSheet.create({
