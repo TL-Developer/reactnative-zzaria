@@ -17,10 +17,12 @@ import {
 
 const BotaoCarrinho = ({
   navigation,
+  carrinho,
   savePedidoDispatch,
 }) => (
   <BotaoCarrinhoStyle>
     <Button
+      disabled={carrinho.formaPg.length === 0 ? true : false}
       icon={
         <Icon
           name="shopping-cart"
@@ -29,7 +31,10 @@ const BotaoCarrinho = ({
         />
       }
       title="Fazer Pedido "
-      onPress={() => savePedidoDispatch()}
+      onPress={() => {
+        navigation.navigate('Home');
+        return savePedidoDispatch();
+      }}
     />
   </BotaoCarrinhoStyle>
 );

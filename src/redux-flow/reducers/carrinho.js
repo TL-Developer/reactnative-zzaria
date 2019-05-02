@@ -3,6 +3,7 @@ import {
   SET_FORMA_PG,
   SOMA_VALOR_PEDIDOS,
   SET_TROCO,
+  CLEAR_CARRINHO,
 } from '../constants';
 
 const initialState = {
@@ -44,10 +45,20 @@ const reducer = (state = initialState, action) => {
       }
 
     case SET_TROCO:
-    debugger
       return {
         ...state,
         troco: action.payload,
+      }
+
+    case CLEAR_CARRINHO:
+      return {
+        pedidos: {
+          loading: false,
+          list: [],
+        },
+        troco: 0,
+        formaPg: '',
+        valor: 0,
       }
 
     default:

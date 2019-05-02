@@ -2,6 +2,10 @@ const initialState = {
   loading: false,
   list: [
     {
+      _id: Math.floor(Math.random(10) * 100),
+      nome: 'Selecione',
+    },
+    {
       _id: 135,
       nome: 'Dinheiro',
     },

@@ -25,7 +25,7 @@ const CarrinhoPage = ({
       setFormaPgDispatch={setFormaPgDispatch}
       setTrocoDispatch={setTrocoDispatch}
     />
-    <BotaoComprar />
+    <BotaoComprar carrinho={carrinho} navigation={navigation} />
   </ScrollView>
 );
 

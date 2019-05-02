@@ -3,6 +3,7 @@ import {
   SET_FORMA_PG,
   SOMA_VALOR_PEDIDOS,
   SET_TROCO,
+  CLEAR_CARRINHO,
 } from '../constants';
 
 import {
@@ -27,6 +28,10 @@ export const somaValorPedidos = payload => ({
 export const setTroco = payload => ({
   type: SET_TROCO,
   payload,
+});
+
+export const clearCarrinho = () => ({
+  type: CLEAR_CARRINHO,
 });
 
 export const savePedido = () => savePedidoTK;

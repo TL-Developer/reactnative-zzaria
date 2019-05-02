@@ -16,7 +16,6 @@ const BotaoCarrinho = ({
   setTrocoDispatch,
 }) => (
   <CarrinhoStyle>
-    <Text>{JSON.stringify(carrinho)}</Text>
     <Text>Pedido:</Text>
     {
       carrinho.pedidos.list.map(pedido => (
@@ -31,7 +30,6 @@ const BotaoCarrinho = ({
         </View>
       ))
     }
-    <Text>{carrinho.formaPg}</Text>
     <Text>Forma de pagamento</Text>
     <Picker
       style={{
@@ -55,7 +53,7 @@ const BotaoCarrinho = ({
           <Input
             placeholder="Troco para quanto"
             value={carrinho.troco}
-            onChange={(e) => setTrocoDispatch(e.target.value)}
+            onChange={(e) => setTrocoDispatch(e.nativeEvent.text)}
             />
           <Text>Troco para R$: {carrinho.troco}</Text>
         </View>
