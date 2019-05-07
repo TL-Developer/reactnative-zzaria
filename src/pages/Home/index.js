@@ -1,33 +1,35 @@
-import React, { Component } from 'react';
-import { Platform, StyleSheet, ScrollView, View, Text } from 'react-native';
-import { ListItem, Divider } from 'react-native-elements';
+import React from 'react';
+import { connect } from 'react-redux';
+import { navigationBarOptions } from '../../helpers/navigationBarOptions';
+
+import {
+  ContainerStyled,
+} from './styles';
 
 import MenuHome from '../../components/Home/menu';
 import BotaoCarrinho from '../../components/Carrinho/BotaoCarrinho';
 
 const Home = ({
   navigation,
+  menu,
 }) => (
-  <ScrollView style={styles.container}>
-    <MenuHome navigation={navigation} />
+  <ContainerStyled>
+    <MenuHome navigation={navigation} menu={menu.list} />
     <BotaoCarrinho navigation={navigation} />
-  </ScrollView>
+  </ContainerStyled>
 );
 
 Home.navigationOptions = {
   title: 'Página inicial',
+  ...navigationBarOptions,
 }
 
-export default Home;
-
-const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-  },
-  title: {
-    fontSize: 22,
-    marginTop: 10,
-    marginBottom: 10,
-    color: '#000',
-  }
+const mapStateToProps = state => ({
+  menu: state.menu,
 });
+
+export default connect(
+  mapStateToProps,
+  null,
+)
+(Home);

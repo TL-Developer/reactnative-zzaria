@@ -1,34 +1,25 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, ScrollView, Text } from 'react-native';
-import { ListItem } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+import {
+  ContainerStyled,
+  ListItemStyled,
+} from './styles';
 
 const MenuHome = ({
   navigation,
+  menu,
 }) => (
-  <ScrollView style={styles.container}>
-    <ListItem
-      title='Pizzas'
-      onPress={() => navigation.push('Pizzas')}
-    />
-    <ListItem
-      title='Brotos'
-    />
-    <ListItem
-      title='Esfihas'
-    />
-    <ListItem
-      title='Beirutes'
-    />
-    <ListItem
-      title='Bebidas'
-    />
-  </ScrollView>
+  <ContainerStyled>
+    {menu.map((item) => (
+      <ListItemStyled
+        leftIcon={{ name: item.icon }}
+        key={item._id}
+        title={item.nome}
+        onPress={() => navigation.push(item.nome)}
+      />
+    ))}
+  </ContainerStyled>
 );
 
 export default MenuHome;
-
-const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-  },
-});
