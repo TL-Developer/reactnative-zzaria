@@ -7,12 +7,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const ScrollViewContainer = styled.View`
   flex: 1;
+  background: #fff;
 `;
 
 const ActionsStyle = styled.View`
   width: 100%;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 `
 
 const PedidoStyle = styled.View`

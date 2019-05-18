@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, ScrollView, Text } from 'react-native';
 import { connect } from 'react-redux';
 
+import { navigationBarOptions } from '../../helpers/navigationBarOptions';
+import BarImage from '../../components/BarImage';
+
 import Carrinho from '../../components/Carrinho';
 import BotaoComprar from '../../components/Carrinho/BotaoComprar';
 
@@ -31,6 +34,8 @@ const CarrinhoPage = ({
 
 CarrinhoPage.navigationOptions = {
   title: 'Sua sacola',
+  ...navigationBarOptions,
+  headerLeft: <BarImage />,
 }
 
 const mapStateToProps = state => ({
@@ -46,6 +51,7 @@ const mapDispatchToProps = dispatch => ({
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
+    backgroundColor: '#831e10',
   },
   title: {
     fontSize: 22,

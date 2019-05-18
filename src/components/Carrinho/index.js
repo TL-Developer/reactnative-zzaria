@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const CarrinhoStyle = styled.View`
   margin: 10px;
+  background: #fff;
 `;
 
 const BotaoCarrinho = ({

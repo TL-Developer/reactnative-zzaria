@@ -6,5 +6,6 @@ export const ContainerStyled = styled.ScrollView`
 `;
 
 export const ListItemStyled = styled(ListItem)`
-  margin: 5px 0;
+  margin: 1px 0;
+  background: #ccc;
 `;

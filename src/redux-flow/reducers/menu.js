@@ -4,27 +4,27 @@ const initialState = {
     {
       _id: 0,
       nome: 'Pizzas',
-      icon: 'pizza',
+      icon: 'timer',
     },
     {
       _id: 1,
       nome: 'Brotos',
-      icon: 'pizza_slice',
+      icon: 'timer',
     },
     {
       _id: 2,
       nome: 'Esfihas',
-      icon: 'pizza_slice',
+      icon: 'timer',
     },
     {
       _id: 3,
       nome: 'Beirutes',
-      icon: 'pizza_slice',
+      icon: 'timer',
     },
     {
       _id: 4,
       nome: 'Bebidas',
-      icon: 'pizza_slice',
+      icon: 'timer',
     }
   ],
 };

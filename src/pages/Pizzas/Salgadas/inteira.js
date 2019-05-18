@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { Platform, StyleSheet, ScrollView, View, Text } from 'react-native';
 import { Divider } from 'react-native-elements';
 
+import { navigationBarOptions } from '../../../helpers/navigationBarOptions';
+import BarImage from '../../../components/BarImage';
+
 import PizzasSalgadasInteira from '../../../components/Pizzas/Salgadas/Inteira';
 
 import {
@@ -33,7 +36,7 @@ class PizzaSalgadaInteiraPage extends PureComponent {
       <ScrollView style={styles.container}>
         <Text style={styles.title}>Escolha 1 sabor</Text>
         <Divider />
-        <Text>{loading && 'Carregando pizzas...'}</Text>
+        <Text style={styles.loading}>{loading && 'Carregando pizzas...'}</Text>
         <PizzasSalgadasInteira
           navigation={navigation}
           loading={loading}
@@ -45,19 +48,27 @@ class PizzaSalgadaInteiraPage extends PureComponent {
 }
 
 PizzaSalgadaInteiraPage.navigationOptions = {
-  title: 'Pizzas Inteiras',
+  title: 'Escolha sua pizza',
+    ...navigationBarOptions,
+  headerLeft: <BarImage />,
 }
 
 const styles = StyleSheet.create({
   container: {
     height: '90%',
     padding: 10,
+    backgroundColor: '#831e10',
   },
   title: {
     fontSize: 22,
     marginTop: 10,
     marginBottom: 10,
-  }
+    color: 'white',
+  },
+  loading: {
+    color: 'white',
+    marginTop: 10,
+  },
 });
 
 const mapStateToProps = state => ({
