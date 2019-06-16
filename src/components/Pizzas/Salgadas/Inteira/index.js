@@ -10,14 +10,14 @@ const PizzaSalgadaMeioaMeio = ({
   <ScrollView>
     {pizzas.length > 0 && (
       pizzas.map(pizza => (
-        <View key={pizza.id}>
+        <View key={pizza._id}>
           <ListItem
-            key={pizza._id}
             title={pizza.nome}
             subtitle={pizza.descricao}
             badge={{ value: pizza.valorGrande, textStyle: { color: 'white' }, containerStyle: { marginTop: 10 } }}
             onPress={() => navigation.push('Pedido', {
               pedido: {
+                pedidoId: pizza._id,
                 nome: pizza.nome,
                 descricao: pizza.descricao,
                 valor: parseInt(pizza.valorGrande),

@@ -51,6 +51,7 @@ const mapDispatchToProps = dispatch => ({
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
+    flexDirection: 'column',
     backgroundColor: '#831e10',
   },
   title: {

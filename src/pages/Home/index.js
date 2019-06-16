@@ -16,10 +16,14 @@ const Home = ({
   menu,
 }) => (
   <ContainerStyled>
-    <MenuHome navigation={navigation} menu={menu.list} />
+    <MenuHome navigation={navigation} menu={menu} />
     <BotaoCarrinho navigation={navigation} />
   </ContainerStyled>
 );
+
+Home.defaultProps = {
+  menu: [],
+};
 
 Home.navigationOptions = {
   title: 'Página inicial',
@@ -28,7 +32,7 @@ Home.navigationOptions = {
 }
 
 const mapStateToProps = state => ({
-  menu: state.menu,
+  menu: state.menu.list,
 });
 
 export default connect(

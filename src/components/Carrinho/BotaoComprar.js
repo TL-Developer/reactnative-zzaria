@@ -6,9 +6,8 @@ import { Badge, Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const BotaoCarrinhoStyle = styled.View`
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  display: flex;
+  padding: 5px;
 `;
 
 import {

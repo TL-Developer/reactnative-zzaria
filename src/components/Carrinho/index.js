@@ -5,6 +5,8 @@ import { Badge, Button, ListItem, Divider, Input } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const CarrinhoStyle = styled.View`
+  display: flex;
+  padding: 5px;
   margin: 10px;
   background: #fff;
 `;
@@ -20,9 +22,8 @@ const BotaoCarrinho = ({
     <Text>Pedido:</Text>
     {
       carrinho.pedidos.list.map(pedido => (
-        <View key={pedido.id}>
+        <View key={pedido.pedidoId}>
           <ListItem
-            key={pedido.id}
             title={pedido.nome}
             subtitle={pedido.descricao}
             badge={{ value: pedido.valor, textStyle: { color: 'white' }, containerStyle: { marginTop: 10 } }}
