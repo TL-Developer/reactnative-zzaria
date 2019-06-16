@@ -18,19 +18,27 @@ const ActionsStyle = styled.View`
 
 const PedidoStyle = styled.View`
   margin: 5px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const PedidoTitleStyle = styled.Text`
   font-size: 20px;
+  flex: 1;
+  padding: 5px;
 `;
 
 const PedidoDescriptionStyle = styled.Text`
   font-size: 14px;
+  flex: 2;
+  padding: 5px;
 `;
 
 const PedidoValorStyle = styled.Text`
   font-size: 22px;
   color: red;
+  flex: 1;
+  padding: 5px;
 `;
 
 class Pedido extends PureComponent {
@@ -129,9 +137,9 @@ class Pedido extends PureComponent {
     return (
       <ScrollViewContainer>
         <PedidoStyle>
-          <PedidoTitleStyle>{ pedido.nome }</PedidoTitleStyle>
-          <PedidoDescriptionStyle>{ pedido.descricao }</PedidoDescriptionStyle>
-          <PedidoValorStyle>{ pedido.valor }</PedidoValorStyle>
+          <PedidoTitleStyle>Pedido: { pedido.nome }</PedidoTitleStyle>
+          <PedidoDescriptionStyle>Descrição: { pedido.descricao }</PedidoDescriptionStyle>
+          <PedidoValorStyle>Valor: R${ pedido.valor }</PedidoValorStyle>
         </PedidoStyle>
 
         <Divider style={{ backgroundColor: 'red' }} />
