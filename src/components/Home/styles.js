@@ -6,6 +6,12 @@ export const ContainerStyled = styled.ScrollView`
 `;
 
 export const ListItemStyled = styled(ListItem)`
-  margin: 1px 0;
-  background: #ccc;
+  background: #fff;
+`;
+
+export const ItemStyled = styled.View`
+  display: flex;
+  padding: 5px 0;
+  margin: 2px 0;
+  background: #fff;
 `;

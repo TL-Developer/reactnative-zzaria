@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components/native';
 
-import { Platform, View, ScrollView, Text, Picker } from 'react-native';
+import { Platform, View, ScrollView, Text, Picker, Dimensions } from 'react-native';
 import { ListItem, Button, Input, Divider } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const ScrollViewContainer = styled.View`
-  flex: 1;
+  display: flex;
   background: #fff;
 `;
 
@@ -14,49 +14,55 @@ const PedidoStyle = styled.View`
   margin: 5px;
   display: flex;
   flex-direction: column;
+  height: ${Math.round(Dimensions.get('window').height) - 90}px;
 `;
 
 const PedidoTitleStyle = styled.Text`
   font-size: 20px;
-  flex: 1;
   padding: 5px;
 `;
 
 const PedidoDescriptionStyle = styled.Text`
   font-size: 14px;
-  flex: 2;
   padding: 5px;
 `;
 
 const PedidoValorStyle = styled.Text`
   font-size: 22px;
   color: red;
-  flex: 1;
   padding: 5px;
 `;
 
 const PedidoBordaStyle = styled.View`
   font-size: 14px;
-  flex: 1;
   padding: 5px;
 `;
 
 const PedidoObservacoesStyle = styled.View`
   font-size: 14px;
-  flex: 1;
   padding: 5px;
 `;
 
 const PedidoActionsStyle = styled.View`
+  margin-top: auto;
   display: flex;
+  flex-direction: row;
 `;
 
 const PedidoActionsQuantidadeStyle = styled.View`
   font-size: 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #ccc;
 `;
 
 const PedidoActionsBtnAdicionarStyle = styled.View`
   font-size: 14px;
+  flex: 2;
+  margin: 0 5px;
 `;
 
 class Pedido extends PureComponent {
@@ -155,6 +161,7 @@ class Pedido extends PureComponent {
     return (
       <ScrollViewContainer>
         <PedidoStyle>
+          <Text>Confirme seu pedido:</Text>
           <PedidoTitleStyle>{ pedido.nome }</PedidoTitleStyle>
           <PedidoDescriptionStyle>{ pedido.descricao }</PedidoDescriptionStyle>
           <PedidoValorStyle>R${ parseFloat(pedido.valor).toFixed(2) }</PedidoValorStyle>
@@ -196,7 +203,7 @@ class Pedido extends PureComponent {
               placeholder="Ex. sem cebola..."
               leftIcon={
                 <Icon
-                  name='user'
+                  name='info'
                   size={24}
                   color='black'
                 />
@@ -217,7 +224,7 @@ class Pedido extends PureComponent {
                 type="clear"
                 onPress={() => this.handleQuantidade('minus')}
               />
-              <Text>Quantidade: {pedido.qtd}</Text>
+              <Text>{pedido.qtd}</Text>
               <Button
                 icon={
                   <Icon

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, ScrollView, Text } from 'react-native';
+import { Platform, StyleSheet, ScrollView, Text, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
+import styled from 'styled-components/native'
 
 import { navigationBarOptions } from '../../helpers/navigationBarOptions';
 import BarImage from '../../components/BarImage';
@@ -13,6 +14,12 @@ import {
   setTroco,
 } from '../../redux-flow/actions/carrinho';
 
+const CarrinhoStyle = styled.View`
+  display: flex;
+  background: #fff;
+  height: ${ Math.round(Dimensions.get('window').height) - 80}px;
+`;
+
 const CarrinhoPage = ({
   navigation,
   carrinho,
@@ -21,14 +28,16 @@ const CarrinhoPage = ({
   setTrocoDispatch,
 }) => (
   <ScrollView style={styles.container}>
-    <Carrinho
-      navigation={navigation}
-      carrinho={carrinho}
-      pagamentos={pagamentos}
-      setFormaPgDispatch={setFormaPgDispatch}
-      setTrocoDispatch={setTrocoDispatch}
-    />
-    <BotaoComprar carrinho={carrinho} navigation={navigation} />
+    <CarrinhoStyle>
+      <Carrinho
+        navigation={navigation}
+        carrinho={carrinho}
+        pagamentos={pagamentos}
+        setFormaPgDispatch={setFormaPgDispatch}
+        setTrocoDispatch={setTrocoDispatch}
+      />
+      <BotaoComprar carrinho={carrinho} navigation={navigation} />
+    </CarrinhoStyle>
   </ScrollView>
 );
 

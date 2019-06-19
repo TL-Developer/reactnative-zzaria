@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import React from 'react';
 
 import {
   ContainerStyled,
   ListItemStyled,
+  ItemStyled,
 } from './styles';
 
 const MenuHome = ({
@@ -12,12 +12,14 @@ const MenuHome = ({
 }) => (
   <ContainerStyled>
     {menu.map((item) => (
-      <ListItemStyled
-        leftIcon={{ name: item.icon }}
-        key={item._id}
-        title={item.nome}
-        onPress={() => navigation.push(item.nome)}
-      />
+      <ItemStyled>
+        <ListItemStyled
+          leftIcon={{ name: item.icon }}
+          key={item._id}
+          title={item.nome}
+          onPress={() => navigation.push(item.nome)}
+        />
+      </ItemStyled>
     ))}
   </ContainerStyled>
 );
